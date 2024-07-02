@@ -1,4 +1,9 @@
 # 0224-hackathon-template
 
+Commande pour construire les images et démarrer le container :
 
-commande pour reconstruire l'image docker : docker compose up --build -d
+    - docker compose up --build -d
+  
+Arreter le container
+
+    - docker compose down
