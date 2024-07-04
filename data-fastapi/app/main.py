@@ -3,28 +3,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 import json
-
-import langchain_community
-from langchain_chroma import Chroma
-from langchain_community.embeddings import SentenceTransformerEmbeddings
-from langchain_core.documents import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_groq import ChatGroq
-
-from langchain_community.document_loaders.csv_loader import CSVLoader
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.chains import create_retrieval_chain
-from langchain_core.prompts import ChatPromptTemplate
-
-from langchain_chroma import Chroma
-from langchain_community.embeddings import SentenceTransformerEmbeddings
-
-
-from langchain_core.runnables import RunnablePassthrough
+from pydantic import BaseModel
+app = FastAPI()
 
 class Item(BaseModel):
     question : str
+
 app = FastAPI()
+
 
 #link = 'app/df_total.csv'
 #data = pd.read_csv(link, encoding='UTF-8')
@@ -75,38 +61,9 @@ def get_conference(num):
 
 
 @app.post("/chat")
-async def chat(key : question):
-    question1 = question
-    def chat_groq(t=0, choix="llama3-70b-8192",
-                  api='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'):
-        return ChatGroq(temperature=t, model_name=choix, groq_api_key=api)
+def chat(key:Item):
+    return question
 
-    model_chat = chat_groq()
-
-    message = """
-    Tu es un  assistant spécialisé dans les événements pour les entreprises dans la thèmetique de l'inclusivité. Ta responsabilité est de répondre de manière personnalisée, professionnelle et agréable.
-    Les utilisateurs sont très probablement des entreprise à la recherche d'une conférence pour favoriser l'inclusion dans leurs entreprises. 
-    utilise ce contexte pour repondre. si tu n'as pas de réponse dis le
-    {question}
-
-    Context:
-    {context}
-    """
-    embeddings_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
-    db = Chroma(persist_directory="hackathon/0224-hackathon-team7/data-fastapi/app/chroma_db", embedding_function=embeddings_model)
-
-
-    retrier = db.as_retriever()
-    prompt = ChatPromptTemplate.from_messages([("human", message)])
-    rag_chain = {"context": retrier, "question": RunnablePassthrough()} | prompt | model_chat
-
-
-    #question = input("Ask a question! ")
-
-    r = rag_chain.invoke(question1)
-
-    dicti = {'reponse': r.content}
-    return dicti
 
 
 # ---------------- FIN DE TON CODE ----------------
