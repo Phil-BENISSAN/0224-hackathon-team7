@@ -1,9 +1,20 @@
-import React from 'react'
+import './navBar.css';
 
 function NavBar() {
   return (
-    <div>NavBar</div>
-  )
+    <header className="header">
+      <img src="logo.png" alt="Inclus'Event Logo" className="logo" />
+      <nav>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Événements</a></li>
+          <li><a href="#">Témoignages</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
-export default NavBar
+export default NavBar;
