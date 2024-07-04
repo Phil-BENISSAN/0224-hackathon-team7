@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 import json
+
 app = FastAPI()
 
 #link = 'app/df_total.csv'
@@ -23,6 +24,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 # -------  INSERER VOTRE CODE ICI -----------------
@@ -49,6 +51,7 @@ def get_conference(num):
     #if int(num) in data['id']:
        # d = data[data.index == int(num)].to_dict(orient='records')
         #return d
+
 
 # ---------------- FIN DE TON CODE ----------------
 
