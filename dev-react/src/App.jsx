@@ -1,10 +1,16 @@
+
+
+
+
 import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css";
+import NavBar from './components/NavBar/NavBar'
 import Footer from "./components/Footer/Footer";
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
 import NameStep from "./components/NameStep";
+
 
 function App() {
   const [steps, setSteps] = useState([
@@ -61,13 +67,16 @@ function App() {
 
   return (
     <>
+
       <Outlet />
+    <NavBar />
       <ThemeProvider theme={theme}>
         <ChatBot steps={steps} floating={true} />
       </ThemeProvider>
       <Footer />
     </>
   );
+
 }
 
 export default App;
