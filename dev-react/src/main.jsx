@@ -7,6 +7,12 @@ import ProgramPage from "../src/pages/ProgramPage/ProgramPage.jsx";
 import EventPage from "../src/pages/EventPage/EventPage.jsx";
 import ProfilePage from "../src/pages/ProfilePage/ProfilePage.jsx";
 import "./index.css";
+import ConferencePage from "./pages/ConferencePage/ConferencePage.jsx";
+
+const getConferenceById = async (id) => {
+  const res = await fetch(`http://localhost:8000/id/${id}`);
+  return await res.json();
+};
 
 const router = createBrowserRouter([
   {
@@ -24,6 +30,11 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <ProfilePage />,
+      },
+      {
+        path: "/conference/:id",
+        element: <ConferencePage />,
+        loader: ({ params }) => getConferenceById(params.id),
       },
       // {
       //   path: "/login",
