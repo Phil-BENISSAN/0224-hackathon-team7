@@ -1,8 +1,17 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  --primary-font: "Open Sans", sans-serif;
+  --secondary-font: "Tahoma", sans-serif;
+  --primary-color: #0a2c42;
 }
 
-
+.page-main-title {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.275rem;
+}

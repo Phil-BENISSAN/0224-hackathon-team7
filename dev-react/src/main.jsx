@@ -1,40 +1,44 @@
 import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import HomePage from "../src/pages/HomePage/HomePage.jsx";
+import ProgramPage from "../src/pages/ProgramPage/ProgramPage.jsx";
+import EventPage from "../src/pages/EventPage/EventPage.jsx";
+import ProfilePage from "../src/pages/ProfilePage/ProfilePage.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     element: <App />,
-
     children: [
       { path: "/", element: <HomePage /> },
       {
         path: "/program",
-        element: <programPage />,
+        element: <ProgramPage />,
       },
       {
         path: "/event",
         element: <EventPage />,
       },
       {
-        path: "/profil",
-        element: <ProfilPage />,
+        path: "/profile",
+        element: <ProfilePage />,
       },
-      {
-        path: "/connexion",
-        element: <LoginPage />,
-      },
-      {
-        path: "/inscription",
-        element: <RegistrationPage />,
-      },
+      // {
+      //   path: "/login",
+      //   element: <LoginPage />,
+      // },
+      // {
+      //   path: "/registration",
+      //   element: <RegistrationPage />,
+      // },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
