@@ -1,6 +1,8 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import pandas as pd
+import json
 
 app = FastAPI()
 
@@ -18,15 +20,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# -------  INSERER VOTRE CODE ICI -----------------
 
 @app.get('/')
 def fn_fast_api():
 
-
-
-    return {'key' : 'valuesee'}
-
+# -------  INSERER VOTRE CODE ICI -----------------
+  
+    df_total = pd.read_csv("app/df_total.json")
+    conferences = json.loads(df_total.to_json(orient="records"))
+    return conferences
 # ---------------- FIN DE TON CODE ----------------
 
 
