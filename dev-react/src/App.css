@@ -1,8 +1,38 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --primary-font: "Open Sans", sans-serif;
+  --secondary-font: "Tahoma", sans-serif;
+  --primary-color: #0a2c42;
+  --secondary-color: #fcf7e6;
+  --third-color: #a8d8e1;
+  --fourth-color: #f6f5f0;
+  --fifth-color: #0c0c0c;
+  --font-stroke: 
+    -0.025rem -0.025rem var(--fifth-color),
+    0.025rem -0.025rem var(--fifth-color),
+    -0.025rem 0.025rem var(--fifth-color),
+    0.025rem 0.025rem var(--fifth-color),
+    0.05rem 0.05rem var(--fifth-color);
 }
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  background-color: var(--fourth-color);
+}
+
+.page-main-title {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.275rem;
+}

@@ -2,12 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
-import HomePage from "./pages/HomePage/HomePage.jsx";
-import ProgramPage from "./pages/ProgramPage/ProgramPage.jsx";
-import EventPage from "./pages/EventPage/EventPage.jsx";
-import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
-// import LoginPage from "./LoginPage.jsx";
-// import RegistrationPage from "./RegistrationPage.jsx";
+import HomePage from "../src/pages/HomePage/HomePage.jsx";
+import ProgramPage from "../src/pages/ProgramPage/ProgramPage.jsx";
+import EventPage from "../src/pages/EventPage/EventPage.jsx";
+import ProfilePage from "../src/pages/ProfilePage/ProfilePage.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -28,11 +26,11 @@ const router = createBrowserRouter([
         element: <ProfilePage />,
       },
       // {
-      //   path: "/connexion",
+      //   path: "/login",
       //   element: <LoginPage />,
       // },
       // {
-      //   path: "/inscription",
+      //   path: "/registration",
       //   element: <RegistrationPage />,
       // },
     ],
