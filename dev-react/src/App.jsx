@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
 import NameStep from "./components/NameStep";
+import FetchAnswerStep from "./components/FetchAnswerStep";
 
 function App() {
   const [steps, setSteps] = useState([
@@ -42,7 +43,7 @@ function App() {
     },
     {
       id: "3",
-      component: <NameStep />, // Final step
+      component: <NameStep />,
       end: true,
     },
   ]);

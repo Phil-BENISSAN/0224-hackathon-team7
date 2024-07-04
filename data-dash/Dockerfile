@@ -13,19 +13,19 @@ COPY . /app /app
 # ETAPE 3 : INSTALLATION DES DEPENDANCES & MISE A JOUR DES PACKAGES
 RUN pip install -r requirements.txt
 
-    # Bonne pratique : commandes RUN combinées 
+# Bonne pratique : commandes RUN combinées 
 RUN apt-get update && apt-get install -y 
 
-    # Supprimer les caches de package :
+# Supprimer les caches de package :
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-    # Supprimer les fichiers temporaires :
+# Supprimer les fichiers temporaires :
 RUN rm -rf /tmp/*
 
-    # Supprimer les logs :
+# Supprimer les logs :
 RUN rm -rf /var/log/*
 
-    # Supprimer les caches de langage  E
+# Supprimer les caches de langage  E
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* \ /var/cache/apt/archives/* /tmp/* /var/tmp/*
 
 

@@ -23,7 +23,6 @@ from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_core.runnables import RunnablePassthrough
 
 class Item(BaseModel):
-    key : str
     question : str
 app = FastAPI()
 
