@@ -8,11 +8,7 @@ import EventPage from "../src/pages/EventPage/EventPage.jsx";
 import ProfilePage from "../src/pages/ProfilePage/ProfilePage.jsx";
 import "./index.css";
 import ConferencePage from "./pages/ConferencePage/ConferencePage.jsx";
-
-const getConferenceById = async (id) => {
-  const res = await fetch(`http://localhost:8000/id/${id}`);
-  return await res.json();
-};
+import { getConferenceById } from "./services/conferenceService.js";
 
 const router = createBrowserRouter([
   {
