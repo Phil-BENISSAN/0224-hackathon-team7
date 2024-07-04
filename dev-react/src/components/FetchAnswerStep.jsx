@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const NameStep = ({ triggerNextStep }) => {
+const FetchAnswerStep = ({ triggerNextStep }) => {
   const [userQuestion, setUserQuestion] = useState("");
   const [botResponse, setBotResponse] = useState("");
 
@@ -33,4 +33,4 @@ const NameStep = ({ triggerNextStep }) => {
   return null;
 };
 
-export default NameStep;
+export default FetchAnswerStep;

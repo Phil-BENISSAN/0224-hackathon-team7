@@ -1,3 +1,9 @@
 fastapi
 pandas
 uvicorn
+langchain
+langchain-community
+langchain_chroma
+langchain-groq
+pydantic
+sentence-transformers

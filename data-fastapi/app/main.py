@@ -3,14 +3,21 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 import json
+from pydantic import BaseModel
+app = FastAPI()
+
+class Item(BaseModel):
+    question : str
 
 app = FastAPI()
+
 
 #link = 'app/df_total.csv'
 #data = pd.read_csv(link, encoding='UTF-8')
 
 link = open('app/df_total.json')
 data = json.load(link)
+
 # -------------------------------------------------   CONFIGURATION CORS   ------------------------------------------------------
 
 origins = [
@@ -51,6 +58,12 @@ def get_conference(num):
     #if int(num) in data['id']:
        # d = data[data.index == int(num)].to_dict(orient='records')
         #return d
+
+
+@app.post("/chat")
+def chat(key:Item):
+    return question
+
 
 
 # ---------------- FIN DE TON CODE ----------------
