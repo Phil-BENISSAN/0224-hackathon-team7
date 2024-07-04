@@ -1,9 +1,16 @@
 #root {
-  margin: 0 auto;
-  padding: 0;
   --primary-font: "Open Sans", sans-serif;
   --secondary-font: "Tahoma", sans-serif;
   --primary-color: #0a2c42;
+  --secondary-color: #fcf7e6;
+  --third-color: #a8d8e1;
+  --fourth-color: #f6f5f0;
+  --fifth-color: #0c0c0c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .page-main-title {
