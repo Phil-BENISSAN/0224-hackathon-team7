@@ -1,42 +1,28 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  --primary-font: "Open Sans", sans-serif;
+  --secondary-font: "Tahoma", sans-serif;
+  --primary-color: #0a2c42;
+  --secondary-color: #fcf7e6;
+  --third-color: #a8d8e1;
+  --fourth-color: #f6f5f0;
+  --fifth-color: #0c0c0c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--fourth-color);
+}
+
+.page-main-title {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  line-height: 150%;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  letter-spacing: 0.275rem;
 }
