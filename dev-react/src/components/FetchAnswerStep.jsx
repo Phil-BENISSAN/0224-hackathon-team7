@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const FetchAnswerStep = (value) => {
+const FetchAnswerStep = ({ value, triggerNextStep }) => {
   const [botResponse, setBotResponse] = useState("");
 
   useEffect(() => {
@@ -19,10 +19,10 @@ const FetchAnswerStep = (value) => {
         }
 
         const data = await response.json();
-        setBotResponse(data.answer); // Set bot's response to state
-        console.log("User question:", value.steps.userQuestion.message); // Log user's question
-        console.log("Bot response:", data.answer); // Log bot's response
-        triggerNextStep(); // Trigger next step in the chatbot flow
+        setBotResponse(data.reply); // Set bot's response to state
+        console.log("User question:", value.steps.userQuestion.message);
+        console.log("Bot response:", data.reply);
+        triggerNextStep({ value: data.reply, trigger: "3" }); // Trigger next step with bot's response
       } catch (error) {
         console.error("Error fetching bot response:", error);
       }
@@ -31,7 +31,7 @@ const FetchAnswerStep = (value) => {
     if (value && value.steps.userQuestion.message) {
       fetchBotResponse();
     }
-  }, [value]);
+  }, [value, triggerNextStep]);
 
   return null;
 };
