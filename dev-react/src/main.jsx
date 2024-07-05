@@ -7,6 +7,8 @@ import ProgramPage from "../src/pages/ProgramPage/ProgramPage.jsx";
 import EventPage from "../src/pages/EventPage/EventPage.jsx";
 import ProfilePage from "../src/pages/ProfilePage/ProfilePage.jsx";
 import "./index.css";
+import ConferencePage from "./pages/ConferencePage/ConferencePage.jsx";
+import { getConferenceById } from "./services/conferenceService.js";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <ProfilePage />,
+      },
+      {
+        path: "/conference",
+        element: <ConferencePage />,
+        loader: ({ params }) => getConferenceById(params.id),
       },
       // {
       //   path: "/login",

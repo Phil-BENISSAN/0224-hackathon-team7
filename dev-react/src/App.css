@@ -11,10 +11,8 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  background-color: var(--fourth-color);
+  box-sizing: border-box;
+  /* background-color: var(--fourth-color); */
 }
 
 .page-main-title {
