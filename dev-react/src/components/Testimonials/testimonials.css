@@ -1,0 +1,63 @@
+.testimonials {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  font-family: var(--primary-font);
+}
+
+.testimonials h2 {
+  color: var(--fourth-color);
+  margin-bottom: 1rem;
+}
+
+.testimonials h3 {
+  color: black;
+  margin-bottom: 2rem;
+  font-family: var(--secondary-font);
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; /* This allows wrapping in case of small screen sizes */
+  gap: 1rem; /* Space between the cards */
+}
+
+.testimonial-card {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 300px; /* Adjust width to fit better in a row */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-top: 3rem; /* Adding space for the image */
+}
+
+.testimonial-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -30px; /* Adjust depending on the padding-top */
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid var(--primary-color);
+}
+
+.testimonial-text {
+  color: white; /* Changing text color to white */
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem; /* Adjust for spacing below the image */
+}
+
+.testimonial-author {
+  color: white; /* Changing author text color to white */
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+  

@@ -12,6 +12,8 @@ import './eventSlider.css';
 
 function EventSlider() {
   return (
+    <>
+    <h1>Les événements à venir :</h1>
     <Swiper
       modules={[Autoplay, Pagination, Navigation]}
       spaceBetween={0}
@@ -64,6 +66,7 @@ function EventSlider() {
         </div>
       </SwiperSlide>
     </Swiper>
+    </>
   );
 }
 
