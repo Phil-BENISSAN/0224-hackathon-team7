@@ -1,4 +1,4 @@
-#root {
+:root {
   --primary-font: "Open Sans", sans-serif;
   --secondary-font: "Tahoma", sans-serif;
   --primary-color: #0a2c42;
@@ -6,13 +6,26 @@
   --third-color: #a8d8e1;
   --fourth-color: #f6f5f0;
   --fifth-color: #0c0c0c;
+  --font-stroke: 
+    -0.025rem -0.025rem var(--fifth-color),
+    0.025rem -0.025rem var(--fifth-color),
+    -0.025rem 0.025rem var(--fifth-color),
+    0.025rem 0.025rem var(--fifth-color),
+    0.05rem 0.05rem var(--fifth-color);
 }
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: var(--fourth-color); */
+}
+
+
+
+body {
+  background-color: var(--fourth-color);
+
 }
 
 .page-main-title {
@@ -23,4 +36,45 @@
   line-height: 150%;
   text-align: center;
   letter-spacing: 0.275rem;
+}
+
+/* CHATBOT */
+
+.chatbot-container {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 1;
+}
+
+.chatbot-toggle-button {
+  background-color: transparent;
+  border: none;
+}
+
+.messager-icon-open {
+  width: 4rem;
+  height: 4rem;
+}
+
+.chatbot-window {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  z-index: 1;
+}
+
+.chatbot-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  z-index: 5;
+}
+
+.messager-icon-close {
+  width: 2rem;
+  height: 2rem;
+  z-index: 5;
 }

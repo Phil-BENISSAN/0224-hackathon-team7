@@ -9,20 +9,30 @@
   font-family: var(--primary-font);
   position: relative;
   z-index: 3;
+<<<<<<< HEAD
   background-color: var(--secondary-color); /* Couleur de fond pour le header */
+=======
+>>>>>>> 34e4100c0aff53b27d4d90eec7ce63f118d2acb5
 }
 
 .logo {
   height: 3rem;
+<<<<<<< HEAD
   background-color: var(--secondary-color); /* Couleur de fond pour le logo */
+=======
+>>>>>>> 34e4100c0aff53b27d4d90eec7ce63f118d2acb5
 }
 
 .burger-menu {
   display: none;
   font-size: 3rem;
+<<<<<<< HEAD
   background-color: var(
     --secondary-color
   ); /* Couleur de fond pour le burger menu */
+=======
+  background: none;
+>>>>>>> 34e4100c0aff53b27d4d90eec7ce63f118d2acb5
   border: none;
   cursor: pointer;
   z-index: 4;
@@ -30,9 +40,12 @@
 
 .nav {
   display: none;
+<<<<<<< HEAD
   background-color: var(
     --secondary-color
   ); /* Couleur de fond pour la navigation */
+=======
+>>>>>>> 34e4100c0aff53b27d4d90eec7ce63f118d2acb5
 }
 
 .nav ul {
@@ -41,14 +54,20 @@
   gap: 20px;
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   background-color: var(--secondary-color);
+=======
+>>>>>>> 34e4100c0aff53b27d4d90eec7ce63f118d2acb5
 }
 
 .nav ul li a {
   text-decoration: none;
   color: var(--fifth-color);
   font-weight: bold;
+<<<<<<< HEAD
   background-color: var(--secondary-color);
+=======
+>>>>>>> 34e4100c0aff53b27d4d90eec7ce63f118d2acb5
 }
 
 @media (max-width: 667px) {
@@ -63,9 +82,13 @@
     right: 0;
     width: 40%;
     height: 100%;
+<<<<<<< HEAD
     background: var(
       --secondary-color
     ); /* Couleur de fond pour la navigation en version mobile */
+=======
+    background: var(--primary-color);
+>>>>>>> 34e4100c0aff53b27d4d90eec7ce63f118d2acb5
     border-left: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
     z-index: 3;

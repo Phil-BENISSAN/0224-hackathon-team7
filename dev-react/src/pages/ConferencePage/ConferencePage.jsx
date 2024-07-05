@@ -2,11 +2,10 @@ import React from "react";
 import "./conferencePage.css";
 import conferenceImg from "../../assets/images/conference.jpg";
 import { useLoaderData } from "react-router-dom";
-import conference from "../../assets/json/confData.json"
 
 function ConferencePage() {
-  // const conference = useLoaderData();
-  // console.log(conference);
+  const conference = useLoaderData();
+  console.log(conference);
   return (
     <main className="conference-page">
       <div>
