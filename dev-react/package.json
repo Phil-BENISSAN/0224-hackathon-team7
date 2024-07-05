@@ -11,20 +11,10 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-<<<<<<< HEAD
-    "react-aria-components": "^1.2.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.24.1",
-    "swiper": "^11.1.4"
-=======
-    "react-dom": "^18.3.1",
-
-    "swiper": "^11.1.4"
-
+    "swiper": "^11.1.4",
     "react-router-dom": "^6.24.1",
     "react-simple-chatbot": "^0.6.1"
-
->>>>>>> 34e4100c0aff53b27d4d90eec7ce63f118d2acb5
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
