@@ -75,7 +75,7 @@ def chat_groq(t=0, choix="llama3-70b-8192",
 
 @app.post("/chat")
 async def chat(question: Question) -> Dict[str, str]:
-    print('Received message:', question.question)
+    # print('Received message:', question.question)
 
     model_chat = chat_groq()
 
