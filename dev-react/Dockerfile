@@ -10,9 +10,13 @@ RUN npm install
 COPY . .
 # ______________________________________________________________________________________________________________________
 EXPOSE 8080
-# Commande pour démarrer vite
+
+# Commande pour démarrer vite 
 CMD [ "npm", "run", "dev" ]
-# This should be good enough to run our development environment.
+
+
+
+# This should be good enough to run our development environment. 
 # But for serving the build, we need to change it a bit(look for the newer version).
 # This is the newer version
 # FROM node:18-alpine
