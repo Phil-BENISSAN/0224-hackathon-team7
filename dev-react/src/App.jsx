@@ -4,49 +4,74 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
-import NameStep from "./components/NameStep";
 import FetchAnswerStep from "./components/FetchAnswerStep";
 
 function App() {
-  const [steps, setSteps] = useState([
+  const [userQuestion, setUserQuestion] = useState("");
+
+  const handleUserQuestion = (value) => {
+    setUserQuestion(value);
+    return "fetchAnswer";
+  };
+
+  const steps = [
     {
       id: "0",
-      message: "Welcome to react chatbot!",
-      trigger: "1",
-    },
-    {
-      id: "1",
-      message: "What is your name?",
-      trigger: "name",
-    },
-    {
-      id: "name",
-      user: true,
-      trigger: "2",
-    },
-    {
-      id: "2",
-      message: "Hi {previousValue}, how can I help you today?",
+      message: "Salut, je suis Bob le Bot ! Comment puis-je vous aider ?",
       trigger: "userQuestion",
     },
     {
       id: "userQuestion",
       user: true,
-      trigger: "fetchAnswer", // Trigger API call
+      trigger: "askEventPurpose",
     },
     {
-      id: "fetchAnswer",
-      component: <FetchAnswerStep />,
-      waitAction: true, // Wait for API response
-      asMessage: true, // Treat API response as a message
-      trigger: "3",
+      id: "askEventPurpose",
+      message: "Pour quel type d'événement souhaitez-vous obtenir des idées ?",
+      trigger: "eventTypes",
     },
     {
-      id: "3",
-      component: <NameStep />,
+      id: "eventTypes",
+      options: [
+        {
+          value: "conference",
+          label: "Conférence",
+          trigger: "conferenceIdeas",
+        },
+        { value: "workshop", label: "Atelier", trigger: "workshopIdeas" },
+        {
+          value: "networking_event",
+          label: "Événement de réseautage",
+          trigger: "networkingIdeas",
+        },
+        { value: "other", label: "Autre", trigger: "otherEventIdeas" },
+      ],
+    },
+    {
+      id: "conferenceIdeas",
+      message:
+        "Voici quelques idées pour organiser une conférence : Organiser des panels de discussion sur des sujets pertinents pour votre industrie. Inviter des conférenciers de renommée internationale. Proposer des sessions interactives pour favoriser l'engagement du public.",
       end: true,
     },
-  ]);
+    {
+      id: "workshopIdeas",
+      message:
+        "Voici quelques idées pour organiser un atelier : Organiser des sessions pratiques et interactives. Proposer des ateliers de formation animés par des experts. Créer des activités de brainstorming pour stimuler la créativité.",
+      end: true,
+    },
+    {
+      id: "networkingIdeas",
+      message:
+        "Voici quelques idées pour organiser un événement de réseautage : Organiser des sessions de speed networking. Proposer des tables rondes thématiques pour faciliter les discussions entre les participants. Créer des espaces de networking informels pour encourager les échanges.",
+      end: true,
+    },
+    {
+      id: "otherEventIdeas",
+      message:
+        "Voici quelques idées pour organiser un autre type d'événement : Organiser des événements communautaires pour renforcer les liens au sein de votre organisation. Proposer des activités de team building pour renforcer l'esprit d'équipe. Créer des événements de célébration pour marquer des occasions spéciales.",
+      end: true,
+    },
+  ];
 
   const theme = {
     background: "#f5f8fb",

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const FetchAnswerStep = ({ triggerNextStep }) => {
-  const [userQuestion, setUserQuestion] = useState("");
+const FetchAnswerStep = ({ value, triggerNextStep }) => {
   const [botResponse, setBotResponse] = useState("");
 
   useEffect(() => {
@@ -12,7 +11,7 @@ const FetchAnswerStep = ({ triggerNextStep }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ question: userQuestion }),
+          body: JSON.stringify({ question: value.steps.userQuestion.message }),
         });
 
         if (!response.ok) {
@@ -20,15 +19,19 @@ const FetchAnswerStep = ({ triggerNextStep }) => {
         }
 
         const data = await response.json();
-        setBotResponse(data.answer);
-        triggerNextStep({ value: botResponse, trigger: "3" });
+        setBotResponse(data.reply); // Set bot's response to state
+        console.log("User question:", value.steps.userQuestion.message);
+        console.log("Bot response:", data.reply);
+        triggerNextStep({ value: data.reply, trigger: "3" }); // Trigger next step with bot's response
       } catch (error) {
         console.error("Error fetching bot response:", error);
       }
     };
 
-    fetchBotResponse();
-  }, [userQuestion, triggerNextStep, botResponse]);
+    if (value && value.steps.userQuestion.message) {
+      fetchBotResponse();
+    }
+  }, [value, triggerNextStep]);
 
   return null;
 };
