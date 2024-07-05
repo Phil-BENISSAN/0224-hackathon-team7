@@ -31,6 +31,7 @@ a {
 
 .program-event-figure {
   width: 22rem;
+  height: 24rem;
   border-radius: 30px;
   background-color: var(--primary-color);
   overflow: hidden;
@@ -263,7 +264,7 @@ figcaption {
 }
 
 .swiper-pagination-bullet-active {
-  margin-top: 1rem;
+  margin-top: 3rem;
   background-color: var(--fifth-color);
   opacity: 1;
 }
@@ -377,6 +378,7 @@ figcaption {
     transition: transform 0.3s ease;
     perspective: 1000px; /* Profondeur de la perspective */
     transform-style: preserve-3d; /* Garde la transformation en 3D */
+    margin-bottom: 3rem;
   }
 
   .program-event-figure:hover {
