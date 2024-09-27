@@ -25,8 +25,14 @@ a {
   width: 100%;
 }
 
+.program-img-div {
+  width: 50%;
+  margin: auto;
+}
+
 .program-main-img {
   width: 100%;
+  height: 90%;
 }
 
 .program-event-figure {
@@ -43,9 +49,14 @@ a {
 }
 
 .event-img {
-  width: 100%;
-  height: 15rem;
-  object-fit: fill;
+  /* width: 100%; */
+  /* height: 15rem; */
+  object-fit: cover;
+}
+
+.style-image {
+  border-radius: 30px;
+  /* height: 15rem; */
 }
 
 .program-event-figure > figcaption {
@@ -295,7 +306,8 @@ figcaption {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--sec-color);
 }
 
 .swiper-button-next:after,
@@ -334,11 +346,11 @@ figcaption {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.event-img {
+/* .event-img {
   width: 100%;
   height: 15rem;
   object-fit: fill;
-}
+} */
 
 figcaption {
   background-color: var(--primary-color);
@@ -367,6 +379,7 @@ figcaption {
 
   .program-event-figure {
     width: 22rem;
+    height: 24rem; /* Ajoutez cette ligne pour forcer la hauteur */
     border-radius: 30px;
     background-color: var(--primary-color);
     overflow: hidden;
@@ -376,33 +389,31 @@ figcaption {
     text-align: center;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
-    perspective: 1000px; /* Profondeur de la perspective */
-    transform-style: preserve-3d; /* Garde la transformation en 3D */
+    perspective: 1000px;
+    transform-style: preserve-3d;
     margin-bottom: 3rem;
   }
 
   .program-event-figure:hover {
     transform: rotateY(10deg) rotateX(-10deg);
-    transform: rotateX(-10deg) rotateY(10deg); /* Torsion en 3D */
   }
 
   .event-img {
     width: 100%;
-    height: auto;
-    border-radius: 30px 30px 0 0; /* Arrondit les coins supérieurs */
+    height: 15rem; /* Ajoutez cette ligne pour forcer la hauteur */
+    object-fit: cover; /* Changez fill en cover pour éviter la déformation */
+    border-radius: 30px 30px 0 0;
+    padding-bottom: 1.5rem; /* Arrondit les coins supérieurs */
   }
 
   figcaption {
     padding: 1rem;
-  }
-  .event-img {
-    width: 100%;
-    height: auto;
-    border-radius: 30px 30px 0 0; /* Arrondit les coins supérieurs */
-  }
-
-  figcaption {
-    padding: 1rem;
+    display: flex;
+    align-items: center; /* Centre verticalement le contenu */
+    justify-content: center; /* Centre horizontalement le contenu */
+    height: calc(
+      24rem - 15rem - 2rem
+    ); /* Ajuste la hauteur en fonction de l'image et des marges */
   }
 
   .button-filter-style {
@@ -412,7 +423,6 @@ figcaption {
 
   .button-filter {
     display: flex;
-    /* Utilise flexbox pour aligner les éléments */
     align-items: center;
     margin: 2rem;
   }
@@ -432,6 +442,7 @@ figcaption {
     margin-left: 2rem;
     padding: 0.7rem;
   }
+
   .filter-wrapper-style {
     flex-direction: row;
   }

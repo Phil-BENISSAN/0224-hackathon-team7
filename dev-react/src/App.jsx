@@ -63,8 +63,8 @@ function App() {
 
   return (
     <>
+        <NavBar />
       <Outlet />
-    <NavBar />
       <ThemeProvider theme={theme}>
         <ChatBot steps={steps} floating={true} />
       </ThemeProvider>

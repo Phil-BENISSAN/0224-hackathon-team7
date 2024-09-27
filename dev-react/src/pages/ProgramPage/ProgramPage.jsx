@@ -44,15 +44,24 @@ function ProgramPage() {
     return Math.floor(Math.random() * imageData.length);
 };
 
+
+  const handleEmailClick = () => {
+    const mailtoLink = 'mailto:destinataire@example.com';
+    window.open(mailtoLink, '_blank');
+  };
+
+
   return (
     <section className="section-program-page">
       <h2 className="page-main-title program-main-title">PROGRAMME</h2>
       <div className="program-main-div">
+        <div className="program-img-div">
         <img
           src="../../src/assets/images/image-programs.png"
           className="program-main-img"
           alt="Program"
         />
+        </div>
         <div className="button-filter-style">
           <button
             type="button"
@@ -131,11 +140,13 @@ function ProgramPage() {
                       <div className="centered-slide-content">
                       <Link to={`/conference/${event.id}`}>
                         <figure className="program-event-figure">
+                          {/* <div className="style-image"> */}
                           <img
                             src={event.image ? event.image : (imageData[getRandomIndex()].url)}
                             alt=""
                             className="event-img"
                           />
+                          {/* </div> */}
                           <figcaption>{event.titre}</figcaption>
                         </figure>
                         </Link>
@@ -144,7 +155,7 @@ function ProgramPage() {
                   ))}
               </Swiper>
             </div>
-           
+
           ))
         : selectedThemes.map((selectedTheme) => (
             <div key={selectedTheme} className="theme-container">
@@ -187,6 +198,14 @@ function ProgramPage() {
               </Swiper>
             </div>
           ))}
+
+
+    <button onClick={handleEmailClick}>
+      Envoyer un e-mail
+    </button>
+
+
+
     </section>
   );
 }
